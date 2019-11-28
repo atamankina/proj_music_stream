@@ -56,10 +56,9 @@ class DataManager():
         if not results:
             raise EmptyResultsError('Could not find the tracks for this album')
 
-            tracks = results['items']
+        tracks = results['items']
 
-        return [MenuItem(self._format_track_label(track), track)
-                for track in tracks]
+        return [MenuItem(self._format_track_label(track), track) for track in tracks]
 
     def play(self, track_uri):
         play(track_uri, self._auth)
